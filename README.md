@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This Flutter application follows a clean architecture pattern with a well-organized folder structure to promote scalability, maintainability, and testability.
+This Flutter application follows a clean architecture pattern with a well-organized folder structure. It includes features for authentication, data management, and UI components.
 
 ## Folder Structure
 
@@ -71,7 +71,13 @@ This project follows a modified clean architecture approach with:
 
 ## Environment Configuration
 
-The project uses a single `.env` file to manage environment variables. Two entry points allow switching between environments:
+The project uses a single `.env` file to manage environment variables. 
+   ```
+STAGING_BASE_URL = 
+PROD_BASE_URL =  
+   ```
+
+Two entry points allow switching between environments:
 - `main-staging.dart` for development
 - `main-production.dart` for production
 
@@ -84,18 +90,7 @@ flutter run -t lib/main-staging.dart
 flutter run -t lib/main-production.dart
 ```
 
-## Third-Party Libraries
-
-- Firebase Cloud Messaging for notifications
-- Google Analytics for app usage metrics
-- Biometric authentication
-- Media picker for image/file selection
-- Remote configuration
 
 ## Contributing
 
 Please follow the project's coding standards and architecture patterns when contributing new features or fixes.
-
-## License
-
-[Insert your license information here]
