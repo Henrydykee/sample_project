@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:new_project/core/presentation/widgets/app_bar.dart';
 import 'package:new_project/core/presentation/widgets/button.dart';
@@ -8,7 +7,7 @@ import 'package:new_project/features/auth/presentation/pages/login_screen.dart';
 import '../../../../../core/utils/navigation_service.dart';
 
 class PasswordResetScreen extends StatefulWidget {
-  String email;
+  final String email;
    PasswordResetScreen({Key? key, required this.email}) : super(key: key);
 
   @override
@@ -29,18 +28,14 @@ class _PasswordResetScreenState extends State<PasswordResetScreen> {
   void _validatePassword(String value) {
     setState(() {
       _password = value;
-
-      // Check password strength (simple check for demonstration)
       _passwordStrengthWeak = value.length < 10;
-      _validationChecks[0] = true; // Let's assume we always mark this as checked for the example
+      _validationChecks[0] = true;
 
-      // Check if password contains name or email
-      _validationChecks[1] = true; // Simplified check for demo
+      _validationChecks[1] = true;
 
-      // Check if password has at least 8 characters
+
       _validationChecks[2] = value.length >= 8;
 
-      // Check if password contains a number or symbol
       _validationChecks[3] = RegExp(r'[0-9!@#$%^&*(),.?":{}|<>]').hasMatch(value);
     });
   }

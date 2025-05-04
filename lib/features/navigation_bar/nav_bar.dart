@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
@@ -212,7 +211,7 @@ class GrantBottomAppBarState extends State<GrantBottomAppBar> with SingleTickerP
                     children: <Widget>[
                       SvgPicture.asset(
                         item.image,
-                        color: isSelected ? Colors.white : color,
+                        colorFilter: isSelected ? ColorFilter.mode(Colors.white, BlendMode.srcIn) : ColorFilter.mode(Colors.white, BlendMode.srcIn),
                       ),
                       Gap(4),
                       AnimatedSwitcher(

@@ -20,7 +20,7 @@ class LoaderWrapper extends StatelessWidget {
             body: IgnorePointer(
               ignoring: true,
               child: Container(
-                color:  Colors.white.withOpacity(0.8),
+                color: Colors.white.withAlpha((0.8 * 255).round()),
                 child: const Center(
                   child: SizedBox(
                     height: 40,

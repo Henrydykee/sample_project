@@ -1,5 +1,3 @@
-import 'dart:developer';
-import 'dart:io';
 
 import 'package:dart_mappable/dart_mappable.dart';
 import 'package:image_picker/image_picker.dart';
@@ -42,7 +40,7 @@ class AuthenticationRemoteDataSourceImpl implements AuthenticationRemoteDataSour
       await inject<SecuredStorage>().add(key: SecureStorageStrings.TOKEN, value: token);
       final user = MapperContainer.globals.fromMap<UserModel>(data["user"]);
       return ResponseModel<UserModel>(message: data["message"], status: data["statusCode"], data: user).data;
-    } catch (e, stackTrace) {
+    } catch (e) {
       return null;
     }
   }

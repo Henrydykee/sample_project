@@ -35,7 +35,6 @@ class StepIndicator extends StatelessWidget {
           children: List.generate(totalSteps, (index) {
             final isActive = index < currentStep;
             final isCompleted = index < currentStep - 1;
-            final isCurrent = index == currentStep - 1;
             
             return Expanded(
               child: Row(

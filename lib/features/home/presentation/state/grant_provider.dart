@@ -26,7 +26,7 @@ class GrantProvider with ChangeNotifier, ProviderState {
       hasError: false,
     );
     Either<UIError, GrantModel>? response = await useCases.getGrantDetail(id);
-    response?.fold((l) {
+    response.fold((l) {
       _setState(loading: false, hasError: true, errorMsg: l.message, payload: null);
       notifyListeners();
     }, (r) {
@@ -42,7 +42,7 @@ class GrantProvider with ChangeNotifier, ProviderState {
       hasError: false,
     );
     Either<UIError, HomeDataModel>? response = await useCases.getDashboardData();
-    response?.fold((l) {
+    response.fold((l) {
       _setState(loading: false, hasError: true, errorMsg: l.message, payload: null);
       notifyListeners();
     }, (r) {
@@ -58,7 +58,7 @@ class GrantProvider with ChangeNotifier, ProviderState {
       hasError: false,
     );
     Either<UIError, List<GrantModel>>? response = await useCases.getSavedGrants();
-    response?.fold((l) {
+    response.fold((l) {
       _setState(loading: false, hasError: true, errorMsg: l.message, payload: null);
       notifyListeners();
     }, (r) {
@@ -73,7 +73,7 @@ class GrantProvider with ChangeNotifier, ProviderState {
       hasError: false,
     );
     Either<UIError, List<GrantModel>>? response = await useCases.exploreGrants();
-    response?.fold((l) {
+    response.fold((l) {
       _setState(loading: false, hasError: true, errorMsg: l.message, payload: null);
       notifyListeners();
     }, (r) {
@@ -88,7 +88,7 @@ class GrantProvider with ChangeNotifier, ProviderState {
       hasError: false,
     );
     Either<UIError, String>? response = await useCases.likeGrant(LikeGrantParams(id: id, action: action));
-    response?.fold((l) {
+    response.fold((l) {
       _setState(loading: false, hasError: true, errorMsg: l.message, payload: null);
       notifyListeners();
     }, (r) {

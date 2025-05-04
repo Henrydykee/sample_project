@@ -8,7 +8,7 @@ import 'package:new_project/core/presentation/widgets/text_holder.dart';
 import '../../../../core/utils/navigation_service.dart';
 
 class BusinessDetailScreen extends StatefulWidget {
-  bool isEdit;
+ final  bool isEdit;
 
   BusinessDetailScreen({super.key, this.isEdit = false});
 

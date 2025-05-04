@@ -27,7 +27,7 @@ Future<T> guardedApiCall<T>(Function run, {String? source, bool showNetworkError
     log("ApiResponseException: ${e.exceptionMessage}");
 
     // If the message from the API is available, display it; otherwise, fallback to the default message
-    throw new NetworkFailure(e.exceptionMessage.toString() != null || e.exceptionMessage.toString() != "" ? e.exceptionMessage.toString() : "Something went wrong, we are trying to fix it");
+    throw new NetworkFailure( e.exceptionMessage.toString() != "" ? e.exceptionMessage.toString() : "Something went wrong, we are trying to fix it");
   } on NetworkConnectivityException catch (e, s) {
     // Handle no internet connection errors
     log("NetworkConnectivityException: ${e.exceptionMessage}");

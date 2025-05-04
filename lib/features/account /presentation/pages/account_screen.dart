@@ -1,6 +1,5 @@
 
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
@@ -33,7 +32,7 @@ class AccountScreen extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: newprojectColor.grey.withOpacity(0.3)),
+                border: Border.all(color: newprojectColor.grey.withAlpha(76)),
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 15),

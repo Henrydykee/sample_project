@@ -158,9 +158,9 @@ class FAQItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       decoration: BoxDecoration(
-        color: Color(0xFFEEEFF2).withOpacity(0.3),
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: newprojectColor.grey.withOpacity(0.1))
+          color: Color(0xFFEEEFF2).withAlpha(76),
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: newprojectColor.grey.withAlpha(25))
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/cupertino.dart';
@@ -30,7 +29,7 @@ class AuthenticationProvider with ChangeNotifier, ProviderState {
       hasError: false,
     );
     Either<UIError, String>? response = await useCases.createOrganisation(createOrganizationParams);
-    response?.fold((l) {
+    response.fold((l) {
       _setState(loading: false, hasError: true, errorMsg: l.message, payload: null);
       notifyListeners();
     }, (r) {
@@ -49,7 +48,7 @@ class AuthenticationProvider with ChangeNotifier, ProviderState {
       password: password,
     ));
 
-    response?.fold((l) {
+    response.fold((l) {
       _setState(loading: false, hasError: true, errorMsg: l.message, payload: null);
       notifyListeners();
     }, (r) {
@@ -70,7 +69,7 @@ class AuthenticationProvider with ChangeNotifier, ProviderState {
       lastName: lastName,
       phone: phone,
     ));
-    response?.fold((l) {
+    response.fold((l) {
       _setState(loading: false, hasError: true, errorMsg: l.message, payload: null);
       notifyListeners();
     }, (r) {
@@ -89,7 +88,7 @@ class AuthenticationProvider with ChangeNotifier, ProviderState {
       password: password,
       token: token,
     ));
-    response?.fold((l) {
+    response.fold((l) {
       _setState(loading: false, hasError: true, errorMsg: l.message, payload: null);
       notifyListeners();
     }, (r) {
@@ -104,7 +103,7 @@ class AuthenticationProvider with ChangeNotifier, ProviderState {
       hasError: false,
     );
     Either<UIError, String>? response = await useCases.requestPasswordReset(email);
-    response?.fold((l) {
+    response.fold((l) {
       _setState(loading: false, hasError: true, errorMsg: l.message, payload: null);
       notifyListeners();
     }, (r) {
@@ -119,7 +118,7 @@ class AuthenticationProvider with ChangeNotifier, ProviderState {
       hasError: false,
     );
     Either<UIError, UserModel>? response = await useCases.updateUser(params);
-    response?.fold((l) {
+    response.fold((l) {
       _setState(loading: false, hasError: true, errorMsg: l.message, payload: null);
       notifyListeners();
     }, (r) {
@@ -134,7 +133,7 @@ class AuthenticationProvider with ChangeNotifier, ProviderState {
       hasError: false,
     );
     Either<UIError, String>? response = await useCases.updateProfileImage(image);
-    response?.fold((l) {
+    response.fold((l) {
       _setState(loading: false, hasError: true, errorMsg: l.message, payload: null);
       notifyListeners();
     }, (r) {

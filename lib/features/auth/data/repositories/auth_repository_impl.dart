@@ -21,10 +21,8 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   @override
   Future<UserModel> loginUser(String email, String password) async {
     final user = await guardedApiCall<UserModel>(() => _remoteDataSource.loginUser(email: email, password: password));
-    if(user != null){
-      await inject<LocalStorageService>().setJson("user", user.toMap());
-    }
-    return user;
+    await inject<LocalStorageService>().setJson("user", user.toMap());
+      return user;
   }
 
   @override
@@ -55,10 +53,8 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   @override
   Future<UserModel> updateUser({required String firstName, required String lastName, required String phone, required String email}) async {
     final user = await guardedApiCall<UserModel>(() => _remoteDataSource.updateUser(firstName: firstName, lastName: lastName, phone: phone, email: email));
-    if(user != null){
-    await inject<LocalStorageService>().setJson("user", user.toMap());
-    }
-    return user;
+  await inject<LocalStorageService>().setJson("user", user.toMap());
+      return user;
   }
 
 }
